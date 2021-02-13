@@ -1,0 +1,151 @@
+/*Sistema*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*Classes Auxiliares*/
+a {text-decoration: none; color: #333}
+
+.float{float: left;}
+
+.w100{width: 100%;}
+
+.h40{height: 40px;}
+
+.center{text-align: center;}
+
+.inlineBlock{display: inline-block;}
+/*Configurações Gerais*/
+input[type='email'],input[type='password'],input[type='text']{
+    margin: 15px 0;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+input[type='submit']{
+    width: 30%;
+    background: #025158;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 10px;
+}
+input[type='submit']:hover{
+    opacity: 0.8;
+}
+.fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../img/bg_1.jpg') center center no-repeat ;
+    background-size: cover;
+}
+.login{
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 30px;
+}
+.loginTextos{
+    width: 70%;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.cadastro{width: 60%; margin: 15px 20%;}
+
+.topFaixa{height: 50px; background: #025158; font-weight: bold; color: #fff;line-height: 50px;}
+
+/*Extra-small*/
+@media screen and (max-width: 480px){
+   
+    input[type='submit']{
+        width: 100%;
+    
+    }
+    input[type='submit']:hover{
+        opacity: 0.8;
+    }
+    .fundo {
+        background: url('../../img/bg_1.jpg') center center no-repeat ;
+        background-size: cover;
+    }
+    .login{
+        width: 90%;
+    }
+    .loginTextos{
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: -20px;
+        margin-top: 15px;
+    }
+    .cad{
+        width: 100%;
+    }
+    .cadastro{width: 80%; margin: 15px 10%;}
+}
+
+/*Small*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+ 
+    input[type='submit']{
+        width: 40%;
+        
+    }
+    input[type='submit']:hover{
+        opacity: 0.8;
+    }
+    .fundo {
+        background: url('../../img/bg_1.jpg') center center no-repeat ;
+        background-size: cover;
+    }
+    .login{
+        width: 60%;
+        
+    }
+    .loginTextos{
+        width: 60%;
+    }
+    .cad{
+        width: 100%;
+    }
+    .cadastro{width: 80%; margin: 25px 10%;}
+}
+
+/*Medium*/
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+    input[type='submit']{
+        width: 40%;
+       
+    }
+    input[type='submit']:hover{
+        opacity: 0.8;
+    }
+    .fundo {
+        background: url('../../img/bg_1.jpg') center center no-repeat ;
+        background-size: cover;
+    }
+    .login{
+        width: 40%;
+    }
+    .loginTextos{
+        width: 60%;
+    }
+}
+/*Large*/
+@media screen and (min-width: 1200px) {
+    
+}
