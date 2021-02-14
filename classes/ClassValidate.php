@@ -177,6 +177,6 @@ class ClassValidate
         } else {
             /*$this->cadastro->insertCad($arrVar);*/
         }
-        return json_encode($arrResponse);
+        return ($arrResponse);
     }
 }
