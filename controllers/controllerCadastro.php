@@ -10,4 +10,4 @@ $validate->validateConfSenha($senha,$senhaConf);
 $validate->validateStrongSenha($senha);
 $validate->validateCaptcha($gRecaptchaResponse);
 /*$validate->validateFinalCad($arrResponse);*/
-$validate->validateFinalCad($arrVar);
+echo $validate->validateFinalCad($arrVar);
