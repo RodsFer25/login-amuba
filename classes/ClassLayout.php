@@ -6,7 +6,7 @@ class ClassLayout
 {
 
     #setar as tags do Head
-    public static function setHead($title, $description, $author="Rodolfo")
+    public static function setHead($title, $description, $author = "Rodolfo")
     {
 
         $html_5 = "  <!DOCTYPE html>\n";
@@ -21,9 +21,9 @@ class ClassLayout
         $html_5 .= "  <title>$title</title>\n";
 
         #FAV ICON
-        $html_5 .= "  <link rel='stylesheet' href='".DIRPAGE."lib/css/style.css'>\n";
+        $html_5 .= "  <link rel='stylesheet' href='" . DIRPAGE . "lib/css/style.css'>\n";
         #http://localhost/login_amuba/....
-        
+
         $html_5 .= "  </head>\n";
         $html_5 .= "  <body>\n";
 
@@ -32,11 +32,11 @@ class ClassLayout
 
     #setar as tags do footer
     public static function setFooter()
-    {   
-        $html_5  = "<script src='".DIRPAGE."lib/js/zepto.min.js'></script>\n";
-        $html_5 .= "<script src='".DIRPAGE."lib/js/vanilla-masker.min.js'></script>\n";
-        $html_5 .= "<script src='https://www.google.com/recaptcha/api.js?render=".SITEKEY."'></script>\n";
-        $html_5 .= "<script src='".DIRPAGE."lib/js/javascript.min.js'></script>\n";
+    {
+        $html_5  = "<script src='" . DIRPAGE . "lib/js/zepto.min.js'></script>\n";
+        $html_5 .= "<script src='" . DIRPAGE . "lib/js/vanilla-masker.min.js'></script>\n";
+        $html_5 .= "<script src='https://www.google.com/recaptcha/api.js?render=" . SITEKEY . "'></script>\n";
+        $html_5 .= "<script src='" . DIRPAGE . "lib/js/javascript.js'></script>\n";
         $html_5 .= "  </body>\n";
         $html_5 .= "  </html>\n";
         #<!--JAVA/JQUERY-->

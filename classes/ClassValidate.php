@@ -4,11 +4,12 @@ namespace Classes;
 
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
+ 
 
 class ClassValidate
 {
 
-    private $erro = [""];
+    private $erro = [];
     private $cadastro;
 
     public function __construct()
@@ -181,6 +182,6 @@ class ClassValidate
             ];
             /*$this->cadastro->insertCad($arrVar);*/
         }
-        return ($arrResponse);
+        return $arrResponse;
     }
 }
