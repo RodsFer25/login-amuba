@@ -8,7 +8,7 @@ use ZxcvbnPhp\Zxcvbn;
 class ClassValidate
 {
 
-    private $erro = [];
+    private $erro = [""];
     private $cadastro;
 
     public function __construct()
@@ -172,9 +172,13 @@ class ClassValidate
         if (count($this->getErro()) > 0) {
             $arrResponse = [
                 "retorno" => "erro",
-                "erros" => $this->getErro()
+                "erros" => $this->getErro(),
             ];
         } else {
+            $arrResponse = [
+                "retorno" => "erro",
+                "erros" => null
+            ];
             /*$this->cadastro->insertCad($arrVar);*/
         }
         return ($arrResponse);
