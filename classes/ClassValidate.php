@@ -2,9 +2,10 @@
 
 namespace Classes;
 
+use ArrayAccess;
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
- 
+
 
 class ClassValidate
 {
@@ -134,10 +135,10 @@ class ClassValidate
     {
         $zxcvbn = new Zxcvbn;
         $weak = $zxcvbn->passwordStrength($senha);
-        echo $weak['score']; // will print 0
+        //echo $weak['score']; // will print 0
 
         $strong = $zxcvbn->passwordStrength($senha);
-        echo $strong['score']; // will print 4
+        //echo $strong['score']; // will print 4
 
         if ($par == null) {
             if ($strong['score'] >= 3) {
@@ -171,17 +172,20 @@ class ClassValidate
     public function validateFinalCad($arrVar)
     {
         if (count($this->getErro()) > 0) {
+        
             $arrResponse = [
+                // print_r($this->getErro())
                 "retorno" => "erro",
-                "erros" => $this->getErro(),
+                "erros" => $this->getErro()
             ];
         } else {
-            $arrResponse = [
-                "retorno" => "erro",
+           $arrResponse = [
+                // print_r($this->getErro())
+                "retorno" => "success",
                 "erros" => null
             ];
             /*$this->cadastro->insertCad($arrVar);*/
         }
-        return $arrResponse;
+        return json_encode($arrResponse);
     }
 }
