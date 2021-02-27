@@ -6,6 +6,27 @@
     font-family: Arial, sans-serif;
 }
 
+/*ALERTAS*/
+
+.alerta {
+	padding: 25px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 10px;
+	font-size: 18px;
+}
+.error {
+	border-color: #e8273b;
+	color: #FFF;
+	background-color: #ed5565;
+}
+.sucesso {
+    align-items: center;
+	border-color: #87c940;
+	color: #FFF;
+	background-color: #a0d468;
+}
+
 /*Classes Auxiliares*/
 a {text-decoration: none; color: #333}
 
