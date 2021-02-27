@@ -5,17 +5,19 @@ namespace Classes;
 use ArrayAccess;
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
-
+use Classes\ClassPassword;
 
 class ClassValidate
 {
 
     private $erro = [];
     private $cadastro;
+    private $password;
 
     public function __construct()
     {
         $this->cadastro = new ClassCadastro();
+        $this->password = new ClassPassword();
     }
 
     public function getErro()
@@ -141,7 +143,7 @@ class ClassValidate
         //echo $strong['score']; // will print 4
 
         if ($par == null) {
-            if ($strong['score'] >= 3) {
+            if ($strong['score'] >= 2) {
                 return true;
             } else {
                 $this->setErro("Utilize uma senha mais forte!");
@@ -154,7 +156,11 @@ class ClassValidate
     #Verificação da Senha digitada com o hash no banco de dados
     public function validateSenha($email, $senha)
     {
-        # code...
+        if ($this->password->verifyHash($email, $senha)) {
+            return true;
+        } else {
+            $this->setErro("Usuário ou Senha Inválidos!");
+        }
     }
 
     public function validateCaptcha($captcha, $score = 0.5)
@@ -172,19 +178,19 @@ class ClassValidate
     public function validateFinalCad($arrVar)
     {
         if (count($this->getErro()) > 0) {
-        
+
             $arrResponse = [
                 // print_r($this->getErro())
                 "retorno" => "erro",
                 "erros" => $this->getErro()
             ];
         } else {
-           $arrResponse = [
+            $arrResponse = [
                 // print_r($this->getErro())
                 "retorno" => "success",
                 "erros" => null
             ];
-            /*$this->cadastro->insertCad($arrVar);*/
+            $this->cadastro->insertCad($arrVar);
         }
         return json_encode($arrResponse);
     }
