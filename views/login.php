@@ -1,6 +1,5 @@
 <?php \Classes\ClassLayout::setHead('Login', 'Realize seu Login.', '');
 
-//$url = isset($_GET['url']) ? $_GET['url'] : '' 
 ?>
 
 

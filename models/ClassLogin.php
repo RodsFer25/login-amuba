@@ -16,11 +16,15 @@ class ClassLogin extends ClassCrud
                 $email
             )
         );
+        
         $f = $b->fetch(\PDO::FETCH_ASSOC);
+        
         $r = $b->rowCount();
+        print_r($r);
         return $arrData = [
             "data" => $f,
             "rows" => $r
         ];
+        
     }
 }

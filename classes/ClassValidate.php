@@ -40,6 +40,7 @@ class ClassValidate
             }
         }
         if ($i == 0) {
+            print_r("Tudo ok" . "\n");
             return true;
         } else {
             $this->setErro("Preencha todos os dados!");
@@ -54,6 +55,7 @@ class ClassValidate
             return true;
         } else {
             $this->setErro("Email inválido!");
+            return false;
         }
     }
 
@@ -160,6 +162,7 @@ class ClassValidate
             return true;
         } else {
             $this->setErro("Usuário ou Senha Inválidos!");
+            return false;
         }
     }
 

@@ -21,11 +21,11 @@ class ClassPassword
         return password_hash($senha, PASSWORD_DEFAULT);
     }
 
-    
+
     #Verificar se o hash da senha está correto
     public function verifyHash($email, $senha)
     {
-        $hashDB = $this->db->getDataUser($email);
-        return password_verify($senha, $hashDB["data"]["senha"]);
+        $hashDb = $this->db->getDataUser($email);
+        return password_verify($senha, $hashDb["data"]["senha"]);
     }
 }
