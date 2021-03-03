@@ -40,11 +40,9 @@ class ClassValidate
             }
         }
         if ($i == 0) {
-            print_r("Tudo ok" . "\n");
             return true;
         } else {
             $this->setErro("Preencha todos os dados!");
-            return false;
         }
     }
 
@@ -60,25 +58,47 @@ class ClassValidate
     }
 
     #Validar se o email existe no banco de dados (action -> null: para cadastro)
+    private function logMessage($message)
+    {
+        echo $message . PHP_EOL;
+    }
+
+    private function logVariable($variable)
+    {
+        var_dump($variable);
+    }
+
     public function validateIssetEmail($email, $action = null)
     {
+        $this->logVariable($email);
+        $this->logVariable($action);
+
         $b = $this->cadastro->getIssetEmail($email);
 
-        if ($action == null) {
+        $this->logVariable($b);
+
+        if ($action === null) {
+            $this->logMessage('Ação foi null!');
             if ($b > 0) {
-                $this->setErro("Email já cadastrado!");
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            if ($b > 0) {
-                return true;
-            } else {
-                $this->setErro("Email não cadastrado!");
+                $this->logMessage('B é maior que zero!');
+                $this->setErro("Email já registrado!");
                 return false;
             }
+
+            $this->logMessage('B não é maior que zero!');
+
+            return true;
         }
+
+        $this->logMessage('Ação não foi nula!');
+        if ($b > 0) {
+            $this->logMessage('B é maior que zero!');
+            return true;
+        }
+
+        $this->logMessage('B não é maior que zero!');
+        $this->setErro("Email não registrado!");
+        return false;
     }
 
     #Validação se o dado é uma data
