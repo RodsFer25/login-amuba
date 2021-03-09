@@ -4,7 +4,6 @@ namespace Models;
 
 class ClassLogin extends ClassCrud
 {
-
     #Retorna os dados do usuário
     public function getDataUser($email)
     {
@@ -16,15 +15,11 @@ class ClassLogin extends ClassCrud
                 $email
             )
         );
-        
         $f = $b->fetch(\PDO::FETCH_ASSOC);
-        
         $r = $b->rowCount();
-        print_r($r);
         return $arrData = [
             "data" => $f,
             "rows" => $r
         ];
-        /*return $r=$b->rowCount(); */
     }
 }

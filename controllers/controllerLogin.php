@@ -1,8 +1,5 @@
 <?php
-namespace Classes;
-
-use Classes\ClassValidate;
-$validate=new ClassValidate();
+$validate=new Classes\ClassValidate();
 $validate->validateFields($_POST);
 $validate->validateEmail($email);
 $validate->validateIssetEmail($email,"login");
